@@ -16,6 +16,7 @@ __email__ = "alumnos@inove.com.ar"
 __version__ = "1.1"
 
 import numpy as np
+import random
 
 
 def ej1():
@@ -41,6 +42,17 @@ def ej1():
 
     Realizar este proceso iterativo hasta cumplir el objetivo
     '''
+    lista = [random.randint (1,10) for x in range(3)]
+    print(lista)
+
+    v1 = np.sum(lista)
+    print(v1)
+
+    if v1 <= 21:
+        print(v1)
+    else:
+        lista_2 = [random.randint(1,10) for x in range(3)]
+
 
 
 def ej2():
@@ -60,6 +72,9 @@ def ej2():
     nombres = ['Tamara', 'Marcelo', 'Martin', 'Juan', 'Alberto', 'Exequiel',
                'Alejandro', 'Leonel', 'Antonio', 'Omar', 'Antonia', 'Amalia',
                'Daniela', 'Sofia', 'Celeste', 'Ramon', 'Jorgelina', 'Anabela']
+
+    nombres_filtrados = [x for x in nombres if(x[0] in padron)]
+    print(nombres_filtrados)
 
     # Se espera obtener:
     # ['Tamara', 'Juan', 'Alberto'......]
@@ -151,8 +166,8 @@ def ej5():
 
 if __name__ == '__main__':
     print("Ejercicios de práctica")
-    # ej1()
-    # ej2()
-    # ej3()
+    #ej1()
+    #ej2()
+    ej3()
     # ej4()
     # ej5()
