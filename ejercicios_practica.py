@@ -17,6 +17,7 @@ __version__ = "1.1"
 
 import numpy as np
 import random
+import math
 
 
 def ej1():
@@ -42,16 +43,18 @@ def ej1():
 
     Realizar este proceso iterativo hasta cumplir el objetivo
     '''
-    lista = [random.randint (1,10) for x in range(3)]
-    print(lista)
+    while True:
+        lista = [random.randint (1,10) for x in range(3)]
+        print(lista)
 
-    v1 = np.sum(lista)
-    print(v1)
-
-    if v1 <= 21:
+        v1 = np.sum(lista)
         print(v1)
-    else:
-        lista_2 = [random.randint(1,10) for x in range(3)]
+
+        if v1 <= 21:
+            print(v1, lista)
+            break
+        else:
+            lista = []
 
 
 
@@ -95,7 +98,7 @@ def ej3():
     # NO utilizar comprensión de listas, solo utilice la
     # funcion de numpy "np.sin"
 
-    # y_nump =
+    y_nump = np.sin(x)
 
     # Conjunto de valores "X" en una lista
     x = list(np.arange(0, 2*np.pi, 0.1))
@@ -104,7 +107,8 @@ def ej3():
     # "y_list" que tenga todos los valores obtenidos como resultado
     # de someter cada valor de "X" a la función math.sin
 
-    # y_list =
+    y_list = [math.sin(x) for x in x]
+    print(y_list)
 
     # Este es un ejemplo práctico de cuando es útil usar numpy,
     # basicamente siempre que deseen utilizar una función matemática
@@ -139,6 +143,10 @@ def ej4():
     # de diccionarios que tiene un parametro configurable respecto
     # que sucede sino encuentra la "key" en el diccionario.
 
+    lista_compra_productos = [producto.get(x, 'Nan')for x in lista_compra_id]
+    print(lista_compra_productos)
+
+
 
 def ej5():
     print("Ahora sí! buena suerte :)")
@@ -162,12 +170,29 @@ def ej5():
     dos jugadores y compitan para ver quien sacá la suma de números
     más cercanos a 21 sin pasarse!
     '''
+    juagdor1 = []
+    
+    while True:
+        
+        lista = [random.randint (1,10) for x in range(2)]
+        print(lista)
 
+        jugador = print(int(input('Presione 1 si desea sacar mas numeros o en su defecto 2')))
+
+        jugada_1 = np.sum(lista)
+        print(jugada_1)
+
+        if jugada_1 == 21:
+            print(jugada_1, lista)
+            print ('BlackJack')
+            break
+        else:
+            lista = []
 
 if __name__ == '__main__':
     print("Ejercicios de práctica")
     #ej1()
     #ej2()
-    ej3()
-    # ej4()
-    # ej5()
+    #ej3()
+    #ej4()
+    ej5()
